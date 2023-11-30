@@ -1,53 +1,76 @@
-import {
-	AppBar,
-	Box,
-	CssBaseline,
-	Paper,
-	useMediaQuery,
-	useTheme,
-} from '@mui/material';
-import { Outlet } from 'react-router-dom';
-import './pageLayout.css';
+import DragHandleIcon from '@mui/icons-material/DragHandle';
+import { AppBar, Box, CssBaseline, IconButton, Paper } from '@mui/material';
+import { Link, Outlet } from 'react-router-dom';
+import { Logo } from '../../common/component/Logo';
+import { COLORS } from '../../common/constants';
+import './pageLayout.scss';
 
 const PageLayout = () => {
-	const theme = useTheme();
-	const isDesktopScreen = useMediaQuery(theme.breakpoints.up('lg'));
-
 	return (
-		<Box sx={{ display: 'flex' }}>
+		<Box className="pageLayoutWrapper">
 			<CssBaseline />
 			<Box
+				className="pageLayout"
 				sx={{
 					flexGrow: 1,
 					width: { xs: '100%', lg: `calc(100vw)` },
 				}}>
 				<AppBar
+					className="appBar"
 					sx={{
 						minHeight: '79px',
-						boxShadow: 'none',
 						position: 'sticky',
 						top: 0,
-						backgroundColor: 'red',
-						display: 'flex',
-						justifyContent: 'center',
+						px: {
+							xs: 1,
+							sm: 2,
+							md: 3,
+							lg: 4,
+						},
 					}}
-					position="relative"></AppBar>
+					position="relative">
+					{/* <Typography variant="h5" noWrap component="a" className="logo">
+						APP LOGO
+					</Typography> */}
+					<Box sx={{ minWidth: '70px', width: '130px', mt: 1 }}>
+						<Logo fill={COLORS.colorBlue} />
+					</Box>
+					<Box
+						className="linkWrapper"
+						sx={{
+							display: {
+								sm: 'flex',
+								xs: 'none',
+							},
+						}}>
+						<Link to={'/dashboard'} className="link">
+							Dashboard
+						</Link>
+						<Link to={'/create-ads'} className="link">
+							Create Ads
+						</Link>
+					</Box>
+					<IconButton
+						sx={{
+							display: {
+								sm: 'none',
+							},
+						}}>
+						<DragHandleIcon />
+					</IconButton>
+				</AppBar>
 
 				<Box
 					component="main"
 					sx={{
 						flexGrow: 1,
-						// paddingRight: { xs: 1, lg: 3 },
-						// paddingLeft: { xs: 1, lg: 0 },
-						// paddingTop: { xs: 1, lg: 0 },
+						padding: { xs: 1, sm: 2, lg: 3 },
 					}}>
 					<Paper
-						elevation={isDesktopScreen ? 1 : 0}
-						className="content-background"
+						elevation={0}
+						className="content-wrapper"
 						sx={{
-							// padding: { lg: '2rem', md: '1.5rem', xs: '1rem' },
-							display: 'flex',
-							flexDirection: 'column',
+							padding: { lg: '1.5rem', md: '1rem', xs: '1rem' },
 						}}>
 						<Outlet />
 					</Paper>

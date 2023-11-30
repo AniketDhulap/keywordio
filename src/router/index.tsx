@@ -10,4 +10,8 @@ export const router = createBrowserRouter([
 		element: <PageLayout />,
 		children: [{ path: '/dashboard', element: <h1>Dashboard</h1> }],
 	},
+	{
+		element: <PageLayout />,
+		children: [{ path: '/create-ads', element: <h1>create-ads</h1> }],
+	},
 ]);
