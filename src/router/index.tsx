@@ -1,4 +1,8 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom';
+
+import NotFoundPage from '../modules/NotFound';
+import CreateAds from '../modules/CreateAds';
+import Dashboard from '../modules/Dashboard';
 import PageLayout from './PageLayout';
 
 export const router = createBrowserRouter([
@@ -8,10 +12,14 @@ export const router = createBrowserRouter([
 	},
 	{
 		element: <PageLayout />,
-		children: [{ path: '/dashboard', element: <h1>Dashboard</h1> }],
+		children: [{ path: '/dashboard', element: <Dashboard /> }],
 	},
 	{
 		element: <PageLayout />,
-		children: [{ path: '/create-ads', element: <h1>create-ads</h1> }],
+		children: [{ path: '/create-ads', element: <CreateAds /> }],
+	},
+	{
+		path: '*',
+		element: <NotFoundPage />,
 	},
 ]);

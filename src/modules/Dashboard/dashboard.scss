@@ -1,0 +1,41 @@
+@import '../../sass/global.scss';
+
+.gridWrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .tableWrapper {
+        background-color: $color-white;
+    }
+}
+
+.insightsTableWrapper {
+    background-color: $color-white;
+    border-radius: $border-radius;
+    border: 2px solid $border-gray-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .toggleButtonWrapperBox {
+        display: flex;
+        justify-content: end;
+        padding: 1rem;
+
+        .toggleButtonWrapper {
+            display: inline;
+            background-color: $color-background;
+            border-radius: $border-radius*10;
+
+            .activeToggleButton {
+                background-color: $color-blue;
+                color: $color-white;
+            }
+
+            .inactiveToggleButton {
+                color: $color-gray-dark;
+            }
+
+        }
+    }
+}

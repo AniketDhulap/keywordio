@@ -1,40 +1,34 @@
 @import '../../sass/global.scss';
 
-.pageLayoutWrapper {
+.pageLayout {
+  height: 100vh;
   display: 'flex';
   flex-direction: 'column';
-  min-height: 100vh;
   background-color: $color-background;
 
-  .pageLayout {
-    .appBar {
-      background-color: $color-white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-direction: row;
-      @include boxShadow($color-shadow);
+  .appBar {
+    background-color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    z-index: 999;
+    @include boxShadow($color-shadow);
 
-      .logo {
-        font-weight: 700;
-        letter-spacing: '.02rem';
-        color: $color-gray-dark;
-      }
-
-      .linkWrapper {
-
-        .link {
-          text-decoration: none;
-          text-transform: uppercase;
-          color: $color-gray-dark;
-          font-weight: 600;
-          margin-left: 2rem;
-        }
-      }
+    .logo {
+      font-weight: 700;
+      letter-spacing: '.02rem';
+      color: $color-gray-dark;
     }
 
-    .content-wrapper {
-      border: 2px solid $color-shadow;
+    .linkWrapper {
+      .link {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-gray-dark;
+        font-weight: 600;
+        margin-left: 2rem;
+      }
     }
   }
 }

@@ -1,5 +1,7 @@
 import { createTheme } from '@mui/material';
 
+// need to add theme colors
+
 export const theme = createTheme({
 	palette: {
 		primary: {
