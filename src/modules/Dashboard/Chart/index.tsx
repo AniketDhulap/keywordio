@@ -33,6 +33,8 @@ enum TABLE_CONTENT {
 	GRAPH = 'GRAPH',
 }
 
+// need to merge rows and grapTableData for table and graph
+
 const rows = [
 	{
 		group: 'Male',
@@ -61,28 +63,28 @@ const grapTableData = [
 	{
 		name: 'Male',
 		data: {
-			clicks: 33,
-			cost: 15500,
-			conversions: 1050,
-			revenue: 345100,
+			clicks: 348,
+			cost: 12528,
+			conversions: 42,
+			revenue: 62118,
 		},
 	},
 	{
 		name: 'Female',
 		data: {
-			clicks: 1500,
-			cost: 53100,
-			conversions: 10,
-			revenue: 533100,
+			clicks: 692,
+			cost: 24912,
+			conversions: 35,
+			revenue: 5175,
 		},
 	},
 	{
 		name: 'unknown',
 		data: {
-			clicks: 15300,
-			cost: 53100,
-			conversions: 340,
-			revenue: 55350,
+			clicks: 105,
+			cost: 3943,
+			conversions: 3,
+			revenue: 4489,
 		},
 	},
 ];
